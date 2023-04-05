@@ -132,15 +132,13 @@
     "id": "3307ab83-226d-49e2-905a-ef118d60172a"
   },
   {
-    "_id": "642c9d4a564f64dd4fe9e72c",
-    "title": "tv12",
+    "title": "microondas",
     "description": "descripcion prod 3",
-    "price": 4000,
+    "price": 3500,
     "thumbnail": "url imagen",
+    "code": "cocina",
     "stock": 45,
-    "code": "televisor",
     "category": "hogar",
-    "status": true,
     "id": "3307ab83-226d-49e2-905a-efd18d10572a"
   },
   {
@@ -156,20 +154,8 @@
     "id": "eb75a066-f01e-410e-b4d0-e622893532fd"
   },
   {
-    "_id": "642cb3d9257ac50b724e2dd6",
-    "title": "as",
-    "description": "as",
-    "price": 1,
-    "thumbnail": "thumbnail",
-    "stock": 2,
-    "code": "code",
-    "category": "S",
-    "status": true,
-    "id": "2310d7bd-fe28-4d91-8fba-d83cbc9673f5"
-  },
-  {
-    "_id": "642cb422f2f030c16703fe6e",
-    "title": "computadora",
+    "_id": "642cb6fe956eddf847b4b160",
+    "title": "computadora9",
     "description": "descripcion prod 3",
     "price": 3500,
     "thumbnail": "url imagen",
@@ -177,28 +163,6 @@
     "code": "televisor",
     "category": "hogar",
     "status": true,
-    "id": "bf07954e-9d3f-4b7c-b971-b655560ac148"
-  },
-  {
-    "_id": "642cb48d326246338df8c832",
-    "title": "computadora2",
-    "description": "descripcion prod 3",
-    "price": 3500,
-    "thumbnail": "url imagen",
-    "stock": 45,
-    "code": "televisor",
-    "category": "hogar",
-    "status": true,
-    "id": "e73d71a1-c3c6-47a9-9d31-9745441f6cb3"
-  },
-  {
-    "title": "computadora5",
-    "description": "descripcion prod 3",
-    "price": 3500,
-    "thumbnail": "url imagen",
-    "code": "televisor",
-    "stock": 45,
-    "category": "hogar",
-    "id": "4b01e932-3f2f-4d09-9df5-6fd7a1967fd1"
+    "id": "ade0f4d9-716b-4453-b88d-6d5df1564232"
   }
 ]

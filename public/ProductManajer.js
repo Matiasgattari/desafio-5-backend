@@ -124,32 +124,7 @@ export class ProductManager {
         }
 
     }
-
-    async updateProduct(id, prodModificado) {
-
-        const jsonProducts = await fs.readFile(this.path, 'utf-8')
-        this.products = JSON.parse(jsonProducts)
-
-        const product = this.products.find((prod) => prod.id === id);
-        const indice = this.products.findIndex(p => p.id === id)
-
-        if (!product) {
-            throw new Error("El id no existe");
-        }
-
-        const nuevoProducto = new Product({
-            ...product,
-            ...prodModificado
-        })
-        nuevoProducto.id = id
-        this.products[indice] = nuevoProducto
-
-        const jsonProductsModif = JSON.stringify(this.products, null, 2)
-
-        console.log("El producto se actualizo con exito", nuevoProducto);
-        await fs.writeFile(this.path, jsonProductsModif)
-    }
-
+    
 
 
     async deleteProduct(id) {
@@ -167,11 +142,49 @@ export class ProductManager {
         return console.log("producto eliminado correctamente");
 
     }
+
+    async updateProduct(id, prodModificado) {
+
+        const jsonProducts = await fs.readFile(this.path, 'utf-8')
+        this.products = JSON.parse(jsonProducts)
+
+        // console.log(id);
+        // console.log(prodModificado);
+
+        const productos = await this.getProducts()
+this.products = productos
+        const product = this.products.find((prod) => prod.id === id);
+
+        const indice = this.products.findIndex(p => p.id === id)
+
+//         console.log(product);
+// console.log(indice);
+
+        if (!product) {
+            throw new Error("El id no existe");
+        }
+
+        const nuevoProducto = new Product({
+            ...product,
+            ...prodModificado
+        })
+        nuevoProducto.id = id
+        this.products[indice] = nuevoProducto
+
+        const jsonProductsModif = JSON.stringify(this.products, null, 2)
+
+        console.log("El producto se actualizo con exito", nuevoProducto);
+        await fs.writeFile(this.path, jsonProductsModif)
+
+await productsDB.findOneAndUpdate({id:id},nuevoProducto)
+
+    }
+
 }
 
 
-
-const productManager = new ProductManager('../productos.txt');
+//manager de productos. prueba
+// const productManager = new ProductManager('../productos.txt');
 // console.log('console log de get products',await productManager.getProducts());
 
 // await productManager.addProduct(
@@ -185,7 +198,19 @@ const productManager = new ProductManager('../productos.txt');
 //     )
 
 // console.log("producto filtrado por ID",await productManager.getProductById('e73d71a1-c3c6-47a9-9d31-9745441f6cb3'));
-await productManager.deleteProduct('2310d7bd-fe28-4d91-8fba-d83cbc9673f5')
+
+// await productManager.deleteProduct('2310d7bd-fe28-4d91-8fba-d83cbc9673f5')
+
+// const prodModif = {title: "microondas",
+// description: "descripcion prod 3",
+// price: 3500,
+// thumbnail: "url imagen",
+// stock: 45,
+// code: "cocina",
+// category: "hogar"}
+
+// await productManager.updateProduct("3307ab83-226d-49e2-905a-efd18d10572a",prodModif)
+
 
 export class CartManager {
 
@@ -313,6 +338,6 @@ export class CartManager {
 
 
 
-
+//no se donde ponerlo
 await mongoose.connection.close()
 
