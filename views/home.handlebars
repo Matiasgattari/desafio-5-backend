@@ -1,0 +1,18 @@
+<h1>{{encabezado}}</h1>
+
+
+{{#if hayProductos}}
+<h4>PRODUCTOS</h4>
+<ul>
+    {{#each producto}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+{{else}}
+<p class="text-danger">sin productos agregados</p>
+{{/if}}
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/indexHome.js"></script>
