@@ -1,16 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
-// import { ProductManager } from '../../public/productManajer.js';
+// import { ProductManager } from '../../public/productManager.js';
 
 import { MONGODB_PATH } from '../config/config.mongo.js';
+// import { CartManager } from '../../public/CartManager.js';
 
 await mongoose.connect(MONGODB_PATH)
 console.log(`conectado a base de datos en ${MONGODB_PATH}`);
 
-// const schemaCarts = new mongoose.Schema({
-//     id: { type: string, required: true },
-//     quantity: { type: number },
-//     products: { type: Array}
-// }, { versionKey: false })
 
 
 // const schemaMessages = new mongoose.Schema({
@@ -82,13 +78,36 @@ export const productsDB = mongoose.model('products', schemaProducts)
 // })
 
 
-const productosBase = await productsDB.find()
+// const productosBase = await productsDB.find()
 
 // console.log(productosBase);
 
 
 
 
+
+const schemaCarts = new mongoose.Schema({
+    id: { type: String, required: true, unique:true },
+    quantity: { type: Number },
+    products: { type: Array}
+}, { versionKey: false })
+
+export const cartsDB = mongoose.model('carts', schemaCarts)
+
+// const cartManager = new CartManager('../../carrito.txt');
+// const carritosLeidos = await cartManager.getCarts()
+// console.log(carritosLeidos);
+
+
+// await cartsDB.insertMany(carritosLeidos)
+
+
+
+// await cartsDB.create({id: "asd", quantity: 2, products: [1,2,3]})
+// await cartsDB.create({id: "asd1", quantity: 2, products: [1,2,3]})
+// await cartsDB.create({id: "asd2", quantity: 2, products: [1,2,3]})
+// console.log(await cartsDB.deleteMany())
+// console.log(await cartsDB.find())
 
 
 

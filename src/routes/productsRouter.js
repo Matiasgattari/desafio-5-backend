@@ -1,5 +1,5 @@
 import express, {Router} from 'express';
-import { Product, ProductManager } from '../../public/productManajer.js';
+import { Product, ProductManager } from '../../public/ProductManager.js';
 import { randomUUID } from 'crypto'
 
 export const productManager = new ProductManager('./productos.txt');

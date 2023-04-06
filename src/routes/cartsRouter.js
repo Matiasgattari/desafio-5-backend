@@ -2,11 +2,9 @@ import express, {
     json,
     Router
 } from 'express';
-import {
-    CartManager,
-    Product,
-    ProductManager
-} from '../../public/productManajer.js';
+import { ProductManager } from '../../public/ProductManager.js';
+import { Product } from '../../public/ProductManager.js';
+import { CartManager } from '../../public/CartManager.js';
 import {
     randomUUID
 } from 'crypto'

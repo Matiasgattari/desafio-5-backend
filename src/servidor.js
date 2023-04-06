@@ -4,7 +4,7 @@ import { Server as SocketIOServer } from 'socket.io'
 import { productsRouter } from './routes/productsRouter.js';
 import { cartsRouter } from './routes/cartsRouter.js';
 import { PORT } from './config/config.sv.js';
-import { ProductManager } from '../public/productManajer.js';
+import { ProductManager } from '../public/ProductManager.js';
 
 
 const productManager = new ProductManager('./productos.txt')
