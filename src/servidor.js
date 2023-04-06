@@ -89,3 +89,11 @@ app.get('/home', async (req, res, next) => {
         })
 })
 
+app.get('/chat', async (req,res,next) => {
+  
+res.render('chat.handlebars', {
+    titulo: 'Products',
+    encabezado: 'Lista de productos en base de datos'
+})
+})
+

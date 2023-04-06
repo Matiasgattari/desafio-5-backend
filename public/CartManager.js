@@ -139,4 +139,4 @@ export class CartManager {
 
 
 // no se donde ponerlo
-await mongoose.connection.close()
+// await mongoose.connection.close()
